@@ -8,9 +8,7 @@ class PersonalInfo extends React.Component {
   render() {
     return (
       <div id="PersonalInfo-container">
-        <h4>Personal Information</h4>
-
-        <form>
+        <form >
           <input type="text" name="firstname" placeholder="First Name"></input>
           <input type="text" name="lastname" placeholder="Last Name"></input>
           <input type="text" name="email" placeholder="Email"></input>

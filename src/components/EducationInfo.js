@@ -5,17 +5,23 @@ class EducationInfo extends React.Component {
     super(props);
     this.state = {};
   }
-  render() {
+
+  render(props) {
     return (
       <div>
-        <h4>Education Information</h4>
+           {    this.props.forms.map((form) =>{
+                return(
 
-        <form>
-          <input type="text" name="university" placeholder="University"></input>
-          <input type="text" name="dates" placeholder="From X To X"></input>
-          <input type="text" name="city" placeholder="City"></input>
-          <input type="text" name="degree" placeholder="Degree"></input>
-        </form>
+        <form key={form.id}>
+        <input type="text" name="university" placeholder="University" onChange={ e => this.props.inputHandler(e, form.id) }></input>
+        <input type="text" name="dates" placeholder="From X To X "  onChange={ e => this.props.inputHandler(e, form.id) } ></input>
+        <input type="text" name="city" placeholder="City" onChange={ e => this.props.inputHandler(e, form.id) }></input>
+        <input type="text" name="degree" placeholder="Degree" onChange={ e => this.props.inputHandler(e, form.id) }></input>
+      </form>
+                )
+              })}
+
+
       </div>
     );
   }
