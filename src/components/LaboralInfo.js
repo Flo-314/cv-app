@@ -7,7 +7,7 @@ class LaboralInfo extends React.Component {
   }
   render(props) {
     return (
-      <div id="laboralInfo-container">
+      <div id="laboralInfo-container" >
         {this.props.forms.map((form) => {
           return (
             <form key={form.id}>

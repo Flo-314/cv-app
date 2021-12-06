@@ -1,4 +1,5 @@
 import React from "react";
+import uniqid from "uniqid";
 
 class Curriculum extends React.Component {
   constructor(props) {
@@ -16,14 +17,11 @@ class Curriculum extends React.Component {
         </header>
         <div id="content">
           <main>
-            <div id="cv-aboutMe">
-              <h3>About me: {this.props.personalInfo.about} </h3>
-            </div>
             <div id="cv-educationInfo">
               <h3>Education</h3>
               {this.props.educationForms.map((form) => {
                 return (
-                  <div>
+                  <div key={uniqid("argentina")}>
                     <h4>University:{form.university}</h4>
                     <h5>
                       Dates:{form.from}-{form.to}
@@ -39,7 +37,7 @@ class Curriculum extends React.Component {
               <h3>Laboral Experience</h3>
               {this.props.laboralForms.map((form) => {
                 return (
-                  <div>
+                  <div key={uniqid("argentina")}>
                     <h4>position:{form.position}</h4>
                     <h5>company:{form.company}</h5>
 
@@ -54,11 +52,13 @@ class Curriculum extends React.Component {
             </div>
           </main>
           <aside>
-            <div id="cv-personalInfo">
+            <div id="cv-personalInfo" key={uniqid("argentina")}>
               <h3>Personal Info:</h3>
               <h4>Adress: {this.props.personalInfo.lastname}</h4>
               <h4>Phone Number: {this.props.personalInfo.email}</h4>
               <h4>Email: {this.props.personalInfo.phonenumber}</h4>
+              <h3>About me: {this.props.personalInfo.about} </h3>
+              <hr></hr>
             </div>
           </aside>
         </div>
