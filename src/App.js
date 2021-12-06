@@ -18,6 +18,7 @@ class App extends React.Component {
 
     this.handleEducationInput = this.handleEducationInput.bind(this);
     this.handleLaboralInput = this.handleLaboralInput.bind(this);
+    this.handlePersonalInput = this.handlePersonalInput.bind(this);
   }
 
   createEducationForm = () => {
@@ -70,6 +71,16 @@ class App extends React.Component {
     laboralForms[index][name] = value;
     this.setState({ laboralForms });
   }
+  handlePersonalInput(event) {
+
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
+
+    let personalInfo = this.state.personalInfo
+    personalInfo[name] = value;
+    this.setState({ personalInfo });
+  }
 
   render() {
     return (
@@ -80,7 +91,10 @@ class App extends React.Component {
         <main>
           <div id="generator-container">
             <h4>Personal Info</h4>
-            <PersonalInfo />
+            <PersonalInfo
+              form={this.state.personalInfo}
+              inputHandler={this.handlePersonalInput}
+            />
             <h4>Education Info</h4>
             <EducationInfo
               forms={this.state.educationForms}
@@ -101,9 +115,12 @@ class App extends React.Component {
               Add
             </button>
           </div>
-          <Curriculum/>
+          <Curriculum
+            personalInfo={this.state.personalInfo}
+            educationForms={this.state.educationForms}
+            laboralForms={this.state.laboralForms}
+          />
         </main>
-        
       </div>
     );
   }
