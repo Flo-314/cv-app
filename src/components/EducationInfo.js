@@ -20,8 +20,14 @@ class EducationInfo extends React.Component {
               ></input>
               <input
                 type="text"
-                name="dates"
-                placeholder="From X To X "
+                name="from"
+                placeholder="From X"
+                onChange={(e) => this.props.inputHandler(e, form.id)}
+              ></input>
+              <input
+                type="text"
+                name="to"
+                placeholder="To Y "
                 onChange={(e) => this.props.inputHandler(e, form.id)}
               ></input>
               <input

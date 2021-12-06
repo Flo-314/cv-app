@@ -25,7 +25,8 @@ class App extends React.Component {
     let educationForm = {
       id: uniqid("id"),
       university: "",
-      dates: "",
+      from: "",
+      to:"",
       city: "",
       degree: "",
     };
@@ -38,7 +39,8 @@ class App extends React.Component {
       id: uniqid("id"),
       position: "",
       company: "",
-      dates: "",
+      from: "",
+      to:"",
       jobDescription: "",
     };
     this.setState({
