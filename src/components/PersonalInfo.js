@@ -7,7 +7,7 @@ class PersonalInfo extends React.Component {
   }
   render(props) {
     return (
-      <div id="PersonalInfo-container">
+      <div id="personalInfo-container">
         <form key={this.props.form.id} >
           <input type="text" name="firstname" placeholder="First Name" onChange={ e => this.props.inputHandler(e) }></input>
           <input type="text" name="lastname" placeholder="Last Name" onChange={ e => this.props.inputHandler(e) }></input>

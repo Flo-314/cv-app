@@ -4,6 +4,9 @@ import EducationInfo from "./components/EducationInfo";
 import LaboralInfo from "./components/LaboralInfo";
 import uniqid from "uniqid";
 import Curriculum from "./components/Curriculum";
+import stylesheet from "./stylesheet.css"
+
+
 class App extends React.Component {
   constructor(props) {
     super(props);

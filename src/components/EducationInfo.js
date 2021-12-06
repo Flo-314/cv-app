@@ -8,7 +8,7 @@ class EducationInfo extends React.Component {
 
   render(props) {
     return (
-      <div>
+      <div id="educationInfo-container">
         {this.props.forms.map((form) => {
           return (
             <form key={form.id}>
