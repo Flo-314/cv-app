@@ -3,7 +3,7 @@ import PersonalInfo from "./components/PersonalInfo";
 import EducationInfo from "./components/EducationInfo";
 import LaboralInfo from "./components/LaboralInfo";
 import uniqid from "uniqid";
-
+import Curriculum from "./components/Curriculum";
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -101,8 +101,9 @@ class App extends React.Component {
               Add
             </button>
           </div>
-          <div id="prev-container"></div>
+          <Curriculum/>
         </main>
+        
       </div>
     );
   }
