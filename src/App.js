@@ -63,7 +63,6 @@ class App extends React.Component {
     educationForms[index][name] = value;
     this.setState({ educationForms });
   }
-
   handleLaboralInput(event, id) {
     const filterID = (e) => e.id === id;
     const index = this.state.laboralForms.findIndex(filterID);
@@ -86,6 +85,9 @@ class App extends React.Component {
     personalInfo[name] = value;
     this.setState({ personalInfo });
   }
+  
+  delete
+
 
   render() {
     return (

@@ -24,13 +24,13 @@ class LaboralInfo extends React.Component {
                 onChange={(e) => this.props.inputHandler(e, form.id)}
               ></input>
           <input
-                type="text"
+                type="date"
                 name="from"
                 placeholder="From X"
                 onChange={(e) => this.props.inputHandler(e, form.id)}
               ></input>
               <input
-                type="text"
+                type="date"
                 name="to"
                 placeholder="To Y "
                 onChange={(e) => this.props.inputHandler(e, form.id)}
