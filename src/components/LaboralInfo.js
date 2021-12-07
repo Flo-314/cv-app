@@ -41,6 +41,7 @@ class LaboralInfo extends React.Component {
                 placeholder="Description of Job"
                 onChange={(e) => this.props.inputHandler(e, form.id)}
               ></input>
+              <button type="button" className="deleteBtn" onClick={() =>{this.props.deleteListener(form.id)}}>Delete Experience</button>
             </form>
           );
         })}

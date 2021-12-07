@@ -42,7 +42,9 @@ class EducationInfo extends React.Component {
                 placeholder="Degree"
                 onChange={(e) => this.props.inputHandler(e, form.id)}
               ></input>
+              <button type="button" className="deleteBtn" onClick={() =>{this.props.deleteListener(form.id)}}>Delete Degree</button>
             </form>
+           
           );
         })}
       </div>

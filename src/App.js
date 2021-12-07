@@ -22,6 +22,10 @@ class App extends React.Component {
     this.handleEducationInput = this.handleEducationInput.bind(this);
     this.handleLaboralInput = this.handleLaboralInput.bind(this);
     this.handlePersonalInput = this.handlePersonalInput.bind(this);
+
+    this.deleteLaboralExperience = this.deleteLaboralExperience.bind(this);
+    this.deleteEducationExperience = this.deleteEducationExperience.bind(this);
+
   }
 
   createEducationForm = () => {
@@ -49,6 +53,8 @@ class App extends React.Component {
     this.setState({
       laboralForms: [...this.state.laboralForms, laboralForm],
     });
+
+    console.log(this.state.laboralForms)
   };
 
   handleEducationInput(event, id) {
@@ -75,7 +81,7 @@ class App extends React.Component {
     laboralForms[index][name] = value;
     this.setState({ laboralForms });
   }
-  handlePersonalInput(event) {
+  handlePersonalInput(event,id) {
 
     const target = event.target;
     const value = target.value;
@@ -86,7 +92,16 @@ class App extends React.Component {
     this.setState({ personalInfo });
   }
   
-  delete
+deleteLaboralExperience(id){
+const laboralForms = this.state.laboralForms.filter((e) => e.id !== id )
+this.setState({laboralForms})
+}
+
+deleteEducationExperience(id){
+  const educationForms = this.state.educationForms.filter((e) => e.id !== id )
+  this.setState({educationForms})
+}
+  
 
 
   render() {
@@ -106,6 +121,8 @@ class App extends React.Component {
             <EducationInfo
               forms={this.state.educationForms}
               inputHandler={this.handleEducationInput}
+              deleteListener={this.deleteEducationExperience}
+
             />
             <button
               id="educationBtn"
@@ -117,6 +134,7 @@ class App extends React.Component {
             <LaboralInfo
               forms={this.state.laboralForms}
               inputHandler={this.handleLaboralInput}
+              deleteListener={this.deleteLaboralExperience}
             />
             <button id="laboralBtn" onClick={() => this.createLaboralForm()}>
               Add
